@@ -1,0 +1,217 @@
+/* ===== PREMIUM BASE RESET ===== */
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+body{
+  font-family:"Segoe UI",Roboto,Arial,sans-serif;
+  background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+  color:#f1f5f9;
+  min-height:100vh;
+  line-height:1.5;
+  transition: all 0.3s ease;
+}
+
+/* ===== PREMIUM CONTAINER ===== */
+.container{
+  max-width:1050px;
+  margin:40px auto;
+  padding:18px;
+}
+
+/* ===== GLASSMORPHISM TOPBAR ===== */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 22px;
+  border-radius:14px;
+  background:linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+  backdrop-filter: blur(12px);
+  box-shadow:0 10px 35px rgba(0,0,0,0.5);
+  margin-bottom:22px;
+}
+.topbar.small{
+  justify-content:center;
+}
+.topbar h1{
+  font-size:22px;
+  font-weight:800;
+  letter-spacing:1px;
+  background: linear-gradient(90deg,#f472b6,#22d3ee,#a78bfa);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.topbar nav a{
+  margin-left:18px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:15px;
+  color:#f8fafc;
+  position:relative;
+}
+.topbar nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background:linear-gradient(90deg,#22d3ee,#a78bfa);
+  transition:.3s;
+}
+.topbar nav a:hover::after{
+  width:100%;
+}
+
+/* ===== GLASS CARD ===== */
+.card{
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 20px 45px rgba(0,0,0,.45);
+  margin-top:18px;
+}
+.center{text-align:center;}
+.muted{color:#cbd5f5;font-size:.95rem;}
+
+/* ===== WELCOME TEXT ===== */
+.card h2{
+  font-size:26px;
+  margin-bottom:10px;
+  background:linear-gradient(90deg,#22d3ee,#f472b6,#a78bfa);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* ===== PREMIUM BUTTONS ===== */
+.actions{
+  display:flex;
+  gap:14px;
+  margin-top:20px;
+  flex-wrap:wrap;
+}
+.btn{
+  padding:12px 20px;
+  border-radius:12px;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  font-weight:800;
+  color:white;
+  background: linear-gradient(135deg,#22d3ee,#a78bfa,#f472b6);
+  box-shadow:0 10px 25px rgba(0,0,0,.4);
+  transition:.25s;
+}
+.btn:hover{
+  transform:translateY(-4px) scale(1.05);
+  box-shadow:0 18px 40px rgba(0,0,0,.6);
+}
+
+/* ===== PREMIUM INPUTS ===== */
+label{
+  font-weight:700;
+  margin-top:10px;
+  display:block;
+}
+input{
+  width:100%;
+  padding:11px;
+  border-radius:10px;
+  margin-top:6px;
+  border:none;
+  outline:none;
+  font-size:15px;
+  background: rgba(255,255,255,0.85);
+  box-shadow: inset 0 0 4px rgba(0,0,0,.25);
+}
+
+/* ===== PREMIUM TABLE ===== */
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:14px;
+  overflow:hidden;
+  border-radius:12px;
+}
+.table thead{
+  background:linear-gradient(90deg,#22d3ee,#a78bfa);
+}
+.table thead th{
+  padding:12px;
+  color:white;
+  font-weight:800;
+}
+.table tbody td{
+  padding:12px;
+  background:rgba(255,255,255,0.08);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+/* ===== PREMIUM TOAST ===== */
+.toast{
+  position:fixed;
+  right:26px;
+  top:26px;
+  padding:16px 22px;
+  border-radius:14px;
+  font-weight:800;
+  box-shadow:0 10px 30px rgba(0,0,0,.55);
+  z-index:999;
+  opacity:0;
+  transform:translateY(-10px);
+  transition:.25s;
+}
+.toast.show{opacity:1;transform:translateY(0);}
+.toast.success{
+  background:linear-gradient(90deg,#22c55e,#4ade80);
+}
+.toast.error{
+  background:linear-gradient(90deg,#ef4444,#f97316);
+}
+.toast.info{
+  background:linear-gradient(90deg,#38bdf8,#a78bfa);
+}
+
+/* ===== LOADER ===== */
+#loader{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+.loader-circle{
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  border:6px solid rgba(255,255,255,.3);
+  border-top:6px solid #22d3ee;
+  animation:spin .85s linear infinite;
+}
+@keyframes spin{100%{transform:rotate(360deg);}}
+
+/* ===== DARK MODE ENHANCEMENT ===== */
+body.dark{
+  background:linear-gradient(120deg,#020617,#020617,#020617);
+  color:#e5e7eb;
+}
+body.dark .card,
+body.dark .topbar{
+  background:rgba(15,23,42,0.9);
+}
+body.dark input{
+  background:#020617;
+  color:white;
+  border:1px solid #334155;
+}
+
+/* ===== MOBILE RESPONSE ===== */
+@media(max-width:650px){
+  .topbar{flex-direction:column;gap:14px;}
+  .actions{flex-direction:column;}
+}
